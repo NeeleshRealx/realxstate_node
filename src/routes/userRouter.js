@@ -90,4 +90,18 @@ userRouter.post("/signup",async (req,res,next)=>{
     
 })
 
+userRouter.post("/logout",async (req,res,next)=>{
+    try{
+        console.log(req.body,"req.body")
+        res.cookie ("token",null,{
+            expires: new Date(Date.now()),
+        })      
+        
+    }
+    catch(err){
+        console.log(err)
+    }
+    
+})
+
 module.exports = {userRouter};
