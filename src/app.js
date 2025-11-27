@@ -8,7 +8,7 @@ const {userRouter}=require("./routes/userRouter")
 const app = express()
 // Configure CORS
 const corsOptions = {
-  origin: 'http://localhost:5173', // Your frontend URL
+  origin: 'http://3.27.13.84', 
  credentials: true
 };
 
