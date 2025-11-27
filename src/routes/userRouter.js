@@ -96,6 +96,7 @@ userRouter.post("/logout",async (req,res,next)=>{
         res.cookie ("token",null,{
             expires: new Date(Date.now()),
         })      
+        res.send("User logged out successfully")
         
     }
     catch(err){
