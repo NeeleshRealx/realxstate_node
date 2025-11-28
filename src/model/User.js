@@ -10,6 +10,7 @@ const schema = new mongoose.Schema({
     required: true,
     type:String,
     },
+    
   "phone": String,
   // "role":{
   //   required: true,

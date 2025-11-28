@@ -8,7 +8,7 @@ const {userRouter}=require("./routes/userRouter")
 const app = express()
 // Configure CORS
 const corsOptions = {
-  origin: 'http://3.27.13.84', 
+  origin: 'http://3.105.82.55', 
  credentials: true
 };
 
