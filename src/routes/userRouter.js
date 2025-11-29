@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express = require("express");
 const userRouter = express.Router();
 const bcrypt = require("bcrypt")
@@ -25,8 +27,12 @@ userRouter.post("/login",async (req,res,next)=>{
         const passCheck= await bcrypt.compare(data.password,user.password,);
 
         if(passCheck){
-            const token = await jwt.sign({_id:user.id},"RealX")
-            res.cookie("token",token)
+            const token = await jwt.sign({_id:user.id},process.env.JWT_KEY)
+            res.cookie("token", token, {
+                httpOnly: true,
+                secure: true,
+                expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000), // 30 days
+            });
             res.send(token)
         }
         else{

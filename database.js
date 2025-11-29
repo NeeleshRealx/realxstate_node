@@ -1,8 +1,9 @@
+require("dotenv").config()
 const { MongoClient } = require('mongodb');
-
+console.log(process.env.DATABASE_KEY,"databaseKey")
 async function runGetStarted() {
   // Replace the uri string with your connection string
-  const uri = 'mongodb+srv://neeleshnithish_db_user:XvQkcFOtQAuecZ6r@realxstate.z1nqmin.mongodb.net/?appName=Realxstate';
+  const uri = process.env.DATABASE_KEY;
   const client = new MongoClient(uri);
   try {
     const database = client.db('RealXstate');
